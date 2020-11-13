@@ -8,4 +8,5 @@ import (
 func main() {
 	fmt.Println("Escrevendo o codigo")
 	auxiliar.Escrever()
+
 }
