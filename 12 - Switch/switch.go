@@ -25,28 +25,28 @@ func diaDaSemana(numero int) string {
 
 func diaDaSemana2(numero int) string {
 
-	var diaDaSemana string
+	var diaSemana string
 
 	switch {
 	case numero == 1:
-		diaDaSemana = "Domingo"
+		diaSemana = "Domingo"
 	case numero == 2:
-		diaDaSemana = "Segunda-Feira"
+		diaSemana = "Segunda-Feira"
 	case numero == 3:
-		diaDaSemana = "Terça-Feira"
+		diaSemana = "Terça-Feira"
 	case numero == 4:
-		diaDaSemana = "Quarta-Feira"
+		diaSemana = "Quarta-Feira"
 	case numero == 5:
-		diaDaSemana = "Quinta-Feira"
+		diaSemana = "Quinta-Feira"
 	case numero == 6:
-		diaDaSemana = "Sexta-Feira"
+		diaSemana = "Sexta-Feira"
 	case numero == 7:
-		diaDaSemana = "Sabado"
+		diaSemana = "Sabado"
 	default:
-		diaDaSemana = "Número inválido"
+		diaSemana = "Número inválido"
 	}
 
-	return diaDaSemana
+	return diaSemana
 }
 
 func main() {
