@@ -30,7 +30,6 @@ func diaDaSemana2(numero int) string {
 	switch {
 	case numero == 1:
 		diaDaSemana = "Domingo"
-		fallthrough
 	case numero == 2:
 		diaDaSemana = "Segunda-Feira"
 	case numero == 3:
@@ -51,8 +50,11 @@ func diaDaSemana2(numero int) string {
 }
 
 func main() {
-	fmt.Println("Switch")
-
-	dia := diaDaSemana2(1)
+	dia := diaDaSemana(7)
 	fmt.Println(dia)
+
+	fmt.Println("--------")
+
+	dia2 := diaDaSemana2(1)
+	fmt.Println(dia2)
 }
