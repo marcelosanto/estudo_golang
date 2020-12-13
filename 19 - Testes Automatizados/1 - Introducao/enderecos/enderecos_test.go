@@ -8,6 +8,7 @@ type cenarioDeTeste struct {
 }
 
 func TestTipoDeEndereco(t *testing.T) {
+	t.Parallel()
 
 	cenariosDeTeste := []cenarioDeTeste{
 		{"Rua Abc", "Rua"},
