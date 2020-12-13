@@ -17,7 +17,7 @@ func TipoDeEndereco(endereco string) string {
 	}
 
 	if enderecoTemUmTipoValido {
-		return pimeiraPalavraDoendereco
+		return strings.Title(pimeiraPalavraDoendereco)
 	}
 
 	return "Tipo Inválido"
