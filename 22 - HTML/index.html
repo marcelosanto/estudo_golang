@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Código CSS - Entendendo a folha de estilos</title>
+    <style type="text/css">
+      h1 {
+        font-style: italic;
+        background-color: blueviolet;
+        color: white;
+        font-size: 50px;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="fundo">
+      <h1>Sou a tag h1</h1>
+
+      <h4>Seja bem vindo, {{ .Nome }}</h4>
+
+      <button id="botao">Clique aqui</button>
+    </div>
+
+    <script>
+      let botao = document.getElementById('botao')
+      botao.addEventListener('click', () => {
+        alert('Oieeeeeeeee')
+      })
+    </script>
+  </body>
+</html>
