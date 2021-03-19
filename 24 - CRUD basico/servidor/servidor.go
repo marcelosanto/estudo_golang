@@ -59,3 +59,13 @@ func CriarUsuario(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusCreated)
 	w.Write([]byte(fmt.Sprintf("usuário inserido com sucesso! Id: %d", idInserido)))
 }
+
+// BuscarUsuarios traz todos os usuarios salvos no banco de dados
+func BuscarUsuarios(w http.ResponseWriter, r *http.Request) {
+
+}
+
+// BuscarUsuarios busca um determinado usuario salvo no banco de dados
+func BuscarUsuario(w http.ResponseWriter, r *http.Request) {
+
+}
