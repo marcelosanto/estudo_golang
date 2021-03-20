@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 type usuario struct {
@@ -62,10 +64,41 @@ func CriarUsuario(w http.ResponseWriter, r *http.Request) {
 
 // BuscarUsuarios traz todos os usuarios salvos no banco de dados
 func BuscarUsuarios(w http.ResponseWriter, r *http.Request) {
+	db, erro := banco.Conectar()
+	if erro != nil {
+		w.Write([]byte("Erro ao conecart no banco de dados."))
+		return
+	}
+	defer db.Close()
 
+	// SELECT * FROM USUARIOS
+	linhas, erro := db.Query("select * from usuarios")
+	if erro != nil {
+		w.Write([]byte("Erro ao buscar os usuarios"))
+		return
+	}
+	defer linhas.Close()
+
+	var usuarios []usuario
+	for linhas.Next() {
+		var usuario usuario
+
+		if erro := linhas.Scan(&usuario.ID, &usuario.Nome, &usuario.Email); erro != nil {
+			w.Write([]byte("Erro ao escanear o usuario"))
+			return
+		}
+
+		usuarios = append(usuarios, usuario)
+	}
+
+	w.WriteHeader(http.StatusOK)
+	if erro := json.NewEncoder(w).Encode(usuarios); erro != nil {
+		w.Write([]byte("Erro ao converter os usuarios para JSON"))
+		return
+	}
 }
 
 // BuscarUsuarios busca um determinado usuario salvo no banco de dados
 func BuscarUsuario(w http.ResponseWriter, r *http.Request) {
-
+	parametros := mux.Vars(r)
 }
