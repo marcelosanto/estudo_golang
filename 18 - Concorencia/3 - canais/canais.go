@@ -10,13 +10,17 @@ func main() {
 
 	go escrever("Oie, eu sou o Goku!!", canal)
 
-	for {
-		mensagem, aberto := <-canal
+	// for {
+	// 	mensagem, aberto := <-canal
 
-		if !aberto {
-			break
-		}
+	// 	if !aberto {
+	// 		break
+	// 	}
 
+	// 	println(mensagem)
+	// }
+
+	for mensagem := range canal {
 		println(mensagem)
 	}
 
