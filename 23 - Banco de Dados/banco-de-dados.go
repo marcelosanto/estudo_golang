@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	stringConexao := "LMnRRDPCp3:EfDnEPTKcX@tcp(remotemysql.com:3306)/LMnRRDPCp3?charset=utf8&parseTime=True"
+	stringConexao := "root:123@/devbook?charset=utf8&parseTime=True"
 	db, erro := sql.Open("mysql", stringConexao)
 	if erro != nil {
 		log.Fatal(erro)
